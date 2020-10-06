@@ -1,0 +1,159 @@
+.site {
+    padding: $myspacer;
+    font-family: Lato, sans-serif;
+}
+
+.site-header {
+    display: flex;
+    flex-direction: column;
+    // logo
+    .site-title {
+        font-size: 18px;
+        margin: 0;
+        a {
+            color: $font-color;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+    .main-navigation {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        margin-top: -20px;
+        // links i menu
+        a {
+            color: lighten($font-color, 25%);
+            font-weight: 600;
+            font-size: .8em;
+        }
+        // hamburger-knappen
+        .menu-toggle {
+            background-color: none !important;
+            padding: 0;
+            border: none;
+            font-size: 2.5em;
+        }
+        .menu {
+            align-self: flex-start;
+            .nav-menu {
+                margin-top: $myspacer*2;
+            }
+        }
+    }
+}
+.form-inline{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+input{
+    margin-right: 20px;
+}
+label{
+    color: hsla(0,0%,45.3%,.81);
+    font-size: .7em;
+}
+article {
+    @include flex;
+}
+.width{
+    width:100%
+}
+a{
+    color: $link-colour;
+    font-weight: 700;
+    text-decoration: underline;
+}
+h1{
+    font-size: 1.7em;
+    margin-bottom: .5em;
+}
+h1, h2{
+    font-weight: $font-weight-headers;
+}
+.list-item-footer{
+    font-size: .6em;
+    list-style-type: none;
+}
+.entry-header {
+    max-width: 1200px;
+    width: 100%;
+}
+.footer-link{
+    margin-right: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+// indholdet centreret på siden 
+.entry-content {
+    @include flex;
+}
+.submit{
+    background-color: $link-colour!important;
+}
+p, figure, h2 h1{
+    max-width: 1280px;
+}
+// Skjuler titlen fra siden
+.page .entry-title{
+    display:none;
+    }
+
+@media screen and (min-width:480px){
+    body{
+        font-size: 20px;
+    }
+}
+@media screen and (min-width:768px){
+    body{
+        font-size: 22px;
+    }
+    .list-item-footer{
+        display: inline-block;
+    }
+    h1{
+        font-size: 2.5em;
+    }
+}
+@media screen and (min-width:992px){
+    body{
+        font-size: 24px;
+    }
+    h2{
+        font-size: 2em;
+    }
+    .reverse-columns {
+		flex-direction: row-reverse;
+    }
+    .row-wrap{
+        flex-flow: row wrap;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 600px) {
+    .site-header {
+        flex-direction: row;
+        .main-navigation {
+            display: flex;
+            justify-content: flex-end;
+            .menu-nav-container {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                .menu-item {
+                    margin-left: $myspacer;
+                }
+            }
+        }
+    }
+}
+
+// stopklods
+@media screen and (min-width: 1280px) {
+    .site {
+        width: 1280px;
+        margin: 0 auto;
+    }
+}
